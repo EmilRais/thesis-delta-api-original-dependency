@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Glass Test Suite">
+    <test name="Glass Test">
+        <classes>
+            <class name="dk.developer.glass.GlassConstructorTest"/>
+            <class name="dk.developer.glass.GlassDestructorTest"/>
+            <class name="dk.developer.glass.GlassFieldTest"/>
+            <class name="dk.developer.glass.GlassParameterTest"/>
+            <class name="dk.developer.glass.GlassTest"/>
+            <class name="dk.developer.glass.SpecifierTest"/>
+        </classes>
+    </test>
+</suite>

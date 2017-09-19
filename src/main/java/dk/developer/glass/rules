@@ -1,0 +1,61 @@
+// TODO: @As connects fields to json name
+// TODO: @Default marks an @As property to be handled by Jackson
+// TODO: @Input marks a usable constructor for deserialisation
+// TODO: @Bind binds parameters on @Input constructor to corresponding field name
+// TODO: @Output marks a usable constructor for deserialisation
+// TODO: @Include lists the fields to include in the serialised json in the @Output method
+// TODO: @Exclude lists the fields to exclude in the serialised json in the @Output method
+// TODO: @IncludeAll includes all @As fields in the serialised json in the @Output method
+// TODO: @ExcludeAll excludes all @As fields in the serialised json in the @Output method
+
+Rules:
+// TODO: GlassPresentProcessor
+CHECK 1. @Default can only be used on @As-annotated field
+CHECK 2. @Bind can only be used on parameters of @Input-annotated constructors
+CHECK 3. @Include can only be used on @Output-annotated destructor
+CHECK 4. @Exclude can only be used on @Output-annotated destructor
+CHECK 5. @IncludeAll can only be used on @Output-annotated destructor
+CHECK 6. @ExcludeAll can only be used on @Output-annotated destructor
+CHECK 7. @Include, @Exclude, @IncludeAll, and @ExcludeAll are mutually exclusive
+
+// TODO: GlassDuplicateProcessor
+CHECK 8. No duplicate values for @As-annotated fields
+CHECK 9. No duplicate values for @Bind-annotated constructor parameters
+CHECK 10. No duplicate values for @Include
+CHECK 11. No duplicate values for @Exclude
+
+// TODO: GlassBindingProcessor
+CHECK 12. Value of @Bind has to point to @As-annotated field
+CHECK 13. Values of @Include have to point to @As-annotated fields
+CHECK 14. Values of @Exclude have to point to @As-annotated fields
+
+// TODO: GlassMiscellaneousProcessor
+CHECK 15. All parameters of @Input-annotated constructor have to be annotated @Bind
+CHECK 16. @Output-annotated destructors have to have unique parameter Map<String, Object>
+CHECK 17. @Output-annotated destructors have to return Map<String, Object>
+
+CHECK 18. @As may not contain the empty string
+CHECK 19. @Bind may not contain the empty string
+CHECK 20. @Exclude may not contain the empty set of strings or the empty string
+CHECK 21. @Include may not contain the empty set of strings or the empty string
+CHECK 22. @Input may not be a no argument constructor
+
+CHECK 23. No duplicate @Input modes
+CHECK 24. No duplicate @Output modes
+// TODO: Enforce @Default at either field or parameter
+To start off:
+// TODO: Should @As be optional?
+- No, we want some consistency and @As will be it
+
+// TODO: Should @Input be optional?
+- Yes
+- interesting if one does not want to be deserialise the object
+
+// TODO: Should @Output be optional?
+- Yes
+- interesting if one does not want to serialise the object
+- interesting if one wants to alter which fields are serialised but no action wants taken
+
+<T> T fromJson(String json).create(Class<T> type)
+
+String toJson(Object object)

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Processor Test Suite">
+    <test name="Processor Test">
+        <classes>
+            <class name="dk.developer.glass.processors.GlassAsProcessorTest"/>
+            <class name="dk.developer.glass.processors.GlassBindProcessorTest"/>
+            <class name="dk.developer.glass.processors.GlassDefaultProcessorTest"/>
+            <class name="dk.developer.glass.processors.GlassInputProcessorTest"/>
+            <class name="dk.developer.glass.processors.GlassOutputProcessorTest"/>
+            <class name="dk.developer.glass.processors.GlassSpecifierProcessorTest"/>
+            <class name="dk.developer.glass.processors.GlassShardProcessorTest"/>
+            <class name="dk.developer.glass.processors.GlassCompositeProcessorTest"/>
+        </classes>
+    </test>
+</suite>
